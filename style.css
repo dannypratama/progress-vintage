@@ -1,0 +1,595 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+:root {
+  --primary: #dc3545;
+  --secondary: #bcd3fc;
+  --black: #2c3031;
+  --white: #fff;
+  --randomcolor: #000;
+  --font-montserrat: "Montserrat";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-montserrat);
+  /*user-select: none;*/
+  overflow-x: hidden;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+::selection {
+  color: #fff;
+  background: var(--black);
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+.ri-star-s-fill,
+.ri-vip-diamond-fill {
+  color: var(--primary);
+}
+
+section {
+  scroll-margin-top: 2rem;
+}
+
+/* ------------------ Navbar ------------------*/
+
+.navbar {
+  background: url(https://i.ibb.co.com/n8NwPKd/nav-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-transform: uppercase;
+}
+
+.navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-right: 0;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 2.2rem;
+}
+
+.navbar-nav {
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* mobile */
+@media (max-width: 767.9px) {
+  .navbar-brand {
+    margin-top: 29px;
+  }
+
+  .navbar-brand img {
+    height: 53px;
+  }
+
+  .navbar-nav {
+    margin-top: 40px;
+  }
+  .row-isi .row img {
+    width: 50px;
+    height: auto;
+  }
+
+  .row-isi .row .col-3 img {
+    width: 80px;
+    height: auto;
+  }
+}
+
+/* desktop */
+@media (min-width: 768px) {
+  .navbar-nav {
+    height: 3.6rem;
+  }
+  .navbar-nav > li {
+    width: 100%;
+    padding: 0.8rem;
+  }
+
+  .navbar-nav > li:nth-child(2) {
+    margin-right: 49px;
+  }
+
+  .navbar-nav > li:nth-child(3) {
+    margin-left: 49px;
+  }
+  .row-isi .row img {
+    width: 100px;
+    height: auto;
+  }
+
+  .row-isi .row .col-3 img {
+    width: 120px;
+    height: auto;
+  }
+}
+
+/* ------------------ Hero Section ------------------*/
+
+/**
+ * Core, likely what you want to copy/paste with little change
+ */
+.marquee {
+  overflow: hidden;
+  display: block;
+}
+
+.marquee::before {
+  display: block;
+  white-space: pre;
+  /* Abusing `content` property and `attr` function to duplicate content in CSS */
+  content: attr(data-text) "        " attr(data-text) "        " attr(data-text)
+    "        " attr(data-text) "        " attr(data-text) "        "
+    attr(data-text) "        " attr(data-text) "        " attr(data-text)
+    "        " attr(data-text) "        " attr(data-text) "        "
+    attr(data-text) "        " attr(data-text) "        " attr(data-text)
+    "        " attr(data-text) "        " attr(data-text) "        "
+    attr(data-text) "        " attr(data-text) "        " attr(data-text)
+    "        " attr(data-text) "        " attr(data-text);
+  width: fit-content;
+  transform: translate3d(-2%, 0, 0);
+  will-change: transform;
+}
+
+/**
+ * Only run animations when reduced motion is not set
+ * Thanks @patrick_h_lauke@mastodon.social for the heads up!
+ */
+@media (prefers-reduced-motion: no-preference) {
+  .marquee::before {
+    animation: marquee 6s linear infinite;
+  }
+
+  .marquee--reverse::before {
+    animation-direction: reverse;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    /**
+     * -2% is used to start scrolling with an offset (visual only)
+     */
+    transform: translate3d(-2%, 0, 0);
+  }
+  100% {
+    /**
+     * -2% offset has to be preserved
+     *
+     * Content is duplicated 20 times
+     * 100% / 20 = 5 % = "1 content length"
+     * 
+     * -1px seems to prevent a small jump between each loop
+     */
+    transform: translate3d(calc(-2% - 5% - 1px), 0, 0);
+  }
+}
+
+/**
+ * From here, style marquee however you'd like
+ */
+.marquee {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  font-size: clamp(0.5rem, 4vh, 1rem);
+  flex: 1;
+  font-weight: 400;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--black);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.marquee-red {
+  background: #e8505b;
+}
+.marquee-yellow {
+  background: #f9d56e;
+}
+.marquee-cream {
+  background: #f3ecc2;
+}
+.marquee-green {
+  background: #14b1ab;
+}
+
+/* Carousel */
+
+.carousel-caption {
+  margin-bottom: 8rem;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+.carousel-caption p {
+  background: black;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+
+.carousel-caption button {
+  border: 0;
+}
+
+.carousel-caption button a {
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  text-transform: uppercase;
+  font-style: italic;
+  border: 0;
+  font-weight: 800;
+  font-size: 1.8rem;
+}
+
+/* Brand Section */
+
+.brand h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.row-isi {
+  box-shadow: 0px 0px 10px 0px rgba(23, 34, 59, 0.1);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin: 0;
+}
+
+/* Shop */
+
+.card:hover #img-bot {
+  display: inline;
+}
+
+.card {
+  display: inline-block;
+  box-shadow: 0px 0px 10px 0px rgba(23, 34, 59, 0.1);
+  border: none;
+  border-radius: 10px;
+}
+
+#img-bot {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.card-body h5 {
+  text-align: center;
+  padding: 3px;
+
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+
+  white-space: pre-line;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.card-body h5:hover {
+  color: white;
+  background-color: var(--randomcolor);
+}
+
+.card-body p {
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* 
+========================
+      BUTTON ONE
+========================
+*/
+.btn-one {
+  transition: all 0.3s;
+  position: relative;
+
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+
+  color: black;
+}
+.btn-one span {
+  transition: all 0.3s;
+}
+.btn-one::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: rgba(0, 0, 0, 0.5);
+  border-bottom-color: rgba(0, 0, 0, 0.5);
+  transform: scale(0.1, 1);
+}
+.btn-one:hover span {
+  letter-spacing: 5px;
+}
+.btn-one:hover::before {
+  opacity: 1;
+  transform: scale(2, 1);
+}
+.btn-one::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.3s;
+  background-color: rgba(20, 179, 174, 0);
+}
+.btn-one:hover::after {
+  opacity: 0;
+  transform: scale(0.1, 1);
+}
+
+.about img:hover {
+  border-radius: 50%;
+  transition: all 0.9s;
+}
+
+.about i:hover {
+  color: var(--randomcolor);
+}
+
+/* footer */
+
+.footer ul {
+  margin: 0px;
+  padding: 0px;
+}
+.footer-section {
+  background: #eae6da;
+  position: relative;
+}
+.footer-cta {
+  border-bottom: 1px solid #da9b68;
+}
+.single-cta i {
+  color: #e8505b;
+  font-size: 30px;
+  margin-top: 8px;
+}
+.cta-text {
+  padding-left: 15px;
+  display: inline-block;
+}
+.cta-text h4 {
+  color: var(--black);
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.cta-text span {
+  color: var(--black);
+  font-size: 14px;
+}
+
+.cta-text span a:hover {
+  color: #e8505b;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 2;
+}
+.footer-pattern img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 330px;
+  background-size: cover;
+  background-position: 100% 100%;
+}
+.footer-logo {
+  margin-bottom: 30px;
+}
+.footer-logo img {
+  max-width: 200px;
+}
+.footer-text p {
+  margin-bottom: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--black);
+  line-height: 28px;
+}
+
+.footer-social-icon a {
+  color: var(--black);
+  font-size: 1rem;
+  margin-right: 15px;
+}
+.footer-social-icon a:hover {
+  color: #e8505b;
+}
+
+.footer-widget-heading h3 {
+  color: var(--black);
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  position: relative;
+}
+.footer-widget-heading h3::before {
+  content: "";
+  position: absolute;
+  right: 160;
+  left: 160;
+  bottom: -14px;
+  height: 2px;
+  background: #e8505b;
+}
+.footer-widget ul li {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  margin-bottom: 12px;
+}
+.footer-widget ul li a:hover {
+  color: #e8505b;
+}
+.footer-widget ul li a {
+  color: var(--black);
+  text-transform: capitalize;
+}
+.subscribe-form {
+  position: relative;
+  overflow: hidden;
+}
+.subscribe-form input {
+  width: 100%;
+  padding: 14px 28px;
+  background: var(--black);
+  border: none;
+  color: #fff;
+}
+.subscribe-form button {
+  position: absolute;
+  right: 0;
+  background: #e8505b;
+  padding: 13px 20px;
+  border: none;
+  top: 0;
+  bottom: 0;
+}
+.subscribe-form button i {
+  color: #fff;
+  font-size: 22px;
+  transform: rotate(-6deg);
+}
+.copyright-area {
+  background: #000;
+  padding: 25px 0;
+}
+.copyright-text p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--white);
+}
+.copyright-text p a {
+  color: #fff;
+}
+.copyright-text i {
+  color: #e8505b;
+}
+.footer-menu li {
+  display: inline-block;
+  margin-left: 20px;
+}
+.footer-menu li:hover a {
+  color: #e8505b;
+}
+.footer-menu li a {
+  font-size: 14px;
+  color: var(--white);
+}
+
+/* Footer Section
+
+footer .social ul li {
+  display: inline-block;
+  padding: 10px;
+}
+footer .social ul li a {
+  display: inline-block;
+  font-size: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+footer .social ul li a:hover {
+  transform: scale(1.5);
+}
+
+footer .nav-link {
+  padding: 0;
+  font-size: 0.9rem;
+  color: var(--black);
+}
+
+footer .nav-link:hover {
+  color: var(--primary);
+}
+
+footer .nav-link i {
+  margin-right: 0.5rem;
+}
+
+footer h5 {
+  font-weight: 600;
+  color: var(--black);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+footer .copyright {
+  font-weight: 600;
+  color: var(--black);
+  font-size: 0.8rem;
+}
+
+footer h4 {
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--black);
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  transition: all 0.5s ease-in-out;
+}
+
+footer h4:hover {
+  transform: scale(1.4);
+}
+
+footer {
+  bottom: 0;
+} */
