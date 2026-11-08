@@ -4,10 +4,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Cara order & pembayaran Progress Vintage — tersedia di Shopee, Instagram, dan WhatsApp."
+      content="Cara order & pembayaran Progress Vintage, tersedia di Shopee, Instagram, dan WhatsApp."
     />
 
-    <title>Progress Vintage</title>
+    <title>Pembayaran & Kontak | Progress Vintage</title>
 
     <!-- Bootstrap CSS -->
     <link
@@ -38,14 +38,15 @@
     />
   </head>
   <body>
-    <!-- /* ------------------ Navbar ------------------*/  -->
+    <!-- Navbar -->
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container">
         <a class="navbar-brand" href="./index.html"
           ><img
             src="assets/img/logo-progress.png"
-            height="80"
+            width="2016"
+            height="491"
             alt="Brand"
         /></a>
         <button
@@ -80,7 +81,8 @@
     </nav>
 
     <main>
-      <div class="container px-4 py-5" id="featured-3">
+      <h1 class="visually-hidden">Progress Vintage payment & contact</h1>
+      <div class="container px-4 py-5">
         <div class="row g-4 py-5 mt-5 row-cols-1 row-cols-lg-3 text-center">
           <div class="feature col">
             <a
@@ -90,7 +92,7 @@
               ><img
                 src="assets/img/contact/shopee.png"
                 class="img-thumbnail"
-                alt="Belanja di Shopee"
+                alt="Belanja di Shopee" width="2081" height="2081"
             /></a>
           </div>
           <div class="feature col">
@@ -101,7 +103,7 @@
               ><img
                 src="assets/img/contact/instagram.png"
                 class="img-thumbnail"
-                alt="Instagram Progress Vintage"
+                alt="Instagram Progress Vintage" width="2082" height="2083"
             /></a>
           </div>
           <div class="feature col">
@@ -112,13 +114,11 @@
               ><img
                 src="assets/img/contact/whatsapp.png"
                 class="img-thumbnail"
-                alt="Chat WhatsApp"
+                alt="Chat WhatsApp" width="2082" height="2083"
             /></a>
           </div>
         </div>
       </div>
-
-      <div class="b-example-divider"></div>
     </main>
 
     <footer class="footer-section">
@@ -129,7 +129,7 @@
               <div class="single-cta">
                 <i class="ti ti-map-2" aria-hidden="true"></i>
                 <div class="cta-text">
-                  <h4>Find us</h4>
+                  <h2>Find us</h2>
                   <span
                     ><a
                       href="https://www.google.com/maps/d/viewer?mid=1d1y6wJbQKLOVHOtbdlrb6IjJfZ4&hl=en_US"
@@ -145,7 +145,7 @@
               <div class="single-cta">
                 <i class="ti ti-phone-call" aria-hidden="true"></i>
                 <div class="cta-text">
-                  <h4>Call us</h4>
+                  <h2>Call us</h2>
                   <span
                     ><a href="https://wa.me/+6288232548532"
                       >+62 882 3254 8532</a
@@ -158,7 +158,7 @@
               <div class="single-cta">
                 <i class="ti ti-mail-opened" aria-hidden="true"></i>
                 <div class="cta-text">
-                  <h4>Mail us</h4>
+                  <h2>Mail us</h2>
                   <span
                     ><a href="mailto:dannypratamaf@gmail.com"
                       >info@progressvintage.com</a
@@ -178,18 +178,15 @@
                     ><img
                       src="assets/img/about-bg.png"
                       class="rounded-circle"
-                      alt="Progress Vintage logo"
-                  /></a>
+                      alt="Progress Vintage logo" width="1500" height="1500"
+            /></a>
                 </div>
                 <div class="footer-text">
                   <p>Original Product with Reasonable Price.</p>
                 </div>
                 <div class="footer-social-icon">
-                  <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram" aria-hidden="true"></i></a>
-                  <a href="#" aria-label="Facebook"><i class="ti ti-brand-facebook" aria-hidden="true"></i></a>
-                  <a href="#" aria-label="X (Twitter)"><i class="ti ti-brand-x" aria-hidden="true"></i></a>
-                  <a href="#" aria-label="YouTube"><i class="ti ti-brand-youtube" aria-hidden="true"></i></a>
-                  <a href="#" aria-label="Threads"><i class="ti ti-brand-threads" aria-hidden="true"></i></a>
+                  <a href="https://instagram.com/dannypratamaf" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="ti ti-brand-instagram" aria-hidden="true"></i></a>
+                  <a href="https://wa.me/+6288232548532" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></a>
                 </div>
               </div>
             </div>
@@ -218,17 +215,21 @@
                   </p>
                 </div>
                 <div class="subscribe-form">
-                  <form action="#">
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Email Address"
-                      aria-label="Email Address"
-                      required
-                    />
-                    <button type="submit">
-                      <i class="ti ti-brand-telegram" aria-hidden="true"></i>
-                    </button>
+                  <form action="#" class="js-subscribe">
+                    <label for="subscribe-email" class="subscribe-label">Email Address</label>
+                    <div class="subscribe-field">
+                      <input
+                        type="email"
+                        id="subscribe-email"
+                        name="email"
+                        placeholder="Email Address"
+                        required
+                      />
+                      <button type="submit">
+                        <i class="ti ti-brand-telegram" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                    <p class="subscribe-note" role="status" aria-live="polite"></p>
                   </form>
                 </div>
               </div>

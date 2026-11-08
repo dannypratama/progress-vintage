@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
 :root {
-  --primary: #dc3545;
+  --primary: #e8505b;
   --secondary: #bcd3fc;
   --black: #2c3031;
   --white: #fff;
@@ -12,6 +12,11 @@
 * {
   margin: 0;
   padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 body {
@@ -43,7 +48,7 @@ section {
   scroll-margin-top: 2rem;
 }
 
-/* ------------------ Navbar ------------------*/
+/* Navbar */
 
 .navbar {
   background: url(assets/img/nav-bg.jpg);
@@ -52,7 +57,13 @@ section {
   text-transform: uppercase;
 }
 
+.navbar-toggler {
+  min-height: 44px;
+}
+
 .navbar-brand {
+  display: inline-block;
+  min-height: 44px;
   padding-top: 0;
   padding-bottom: 0;
   margin-right: 0;
@@ -70,6 +81,11 @@ section {
   font-weight: 600;
 }
 
+.navbar-brand img {
+  height: 80px;
+  width: auto;
+}
+
 /* mobile */
 @media (max-width: 767.9px) {
   .navbar-brand {
@@ -78,6 +94,7 @@ section {
 
   .navbar-brand img {
     height: 53px;
+    width: auto;
   }
 
   .navbar-nav {
@@ -122,7 +139,7 @@ section {
   }
 }
 
-/* ------------------ Hero Section ------------------*/
+/* Hero section */
 
 /**
  * Core, likely what you want to copy/paste with little change
@@ -201,7 +218,7 @@ section {
 }
 
 .marquee-red {
-  background: #e8505b;
+  background: var(--primary);
 }
 .marquee-yellow {
   background: #f9d56e;
@@ -243,9 +260,34 @@ section {
   font-size: 1.8rem;
 }
 
+/* Mobile: caption & CTA tetap tampil dengan skala kecil, tidak tertutup navbar */
+@media (max-width: 767.98px) {
+  .carousel-item img {
+    height: 240px;
+    object-fit: cover;
+  }
+  .carousel-caption {
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .carousel-caption p {
+    font-size: 0.875rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .carousel-caption .btn-slide {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+    min-height: 44px;
+  }
+}
+
 /* Brand Section */
 
-.brand h1 {
+.brand h1,
+.brand h2 {
   font-size: 2.5rem;
   font-weight: 700;
 }
@@ -258,6 +300,10 @@ section {
 }
 
 /* Shop */
+
+.shop-title h2 {
+  font-size: 2.5rem;
+}
 
 .card:hover .img-bot {
   display: inline;
@@ -278,7 +324,14 @@ section {
   z-index: 3;
 }
 
-.card-body h5 {
+.card-body > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+}
+
+.card-body h3 {
   text-align: center;
   padding: 3px;
 
@@ -295,7 +348,7 @@ section {
   -webkit-box-orient: vertical;
 }
 
-.card-body h5:hover {
+.card-body h3:hover {
   color: white;
   background-color: var(--randomcolor);
 }
@@ -365,6 +418,11 @@ section {
   transform: scale(0.1, 1);
 }
 
+.about h2,
+.about h3 {
+  font-size: 1.5rem;
+}
+
 .about img:hover {
   border-radius: 50%;
   transition: all 0.9s;
@@ -384,7 +442,7 @@ section {
   border-bottom: 1px solid #da9b68;
 }
 .single-cta i {
-  color: #e8505b;
+  color: var(--primary);
   font-size: 30px;
   margin-top: 8px;
 }
@@ -392,6 +450,7 @@ section {
   padding-left: 15px;
   display: inline-block;
 }
+.cta-text h2,
 .cta-text h4 {
   color: var(--black);
   font-size: 20px;
@@ -404,7 +463,7 @@ section {
 }
 
 .cta-text span a:hover {
-  color: #e8505b;
+  color: var(--primary);
 }
 
 .footer-content {
@@ -428,10 +487,15 @@ section {
 .footer-social-icon a {
   color: var(--black);
   font-size: 1rem;
-  margin-right: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-right: 2px;
 }
 .footer-social-icon a:hover {
-  color: #e8505b;
+  color: var(--primary);
 }
 
 .footer-widget-heading h3 {
@@ -448,7 +512,7 @@ section {
   left: 160;
   bottom: -14px;
   height: 2px;
-  background: #e8505b;
+  background: var(--primary);
 }
 .footer-widget ul li {
   display: inline-block;
@@ -457,15 +521,35 @@ section {
   margin-bottom: 12px;
 }
 .footer-widget ul li a:hover {
-  color: #e8505b;
+  color: var(--primary);
 }
 .footer-widget ul li a {
   color: var(--black);
   text-transform: capitalize;
+  display: inline-block;
+  padding: 12px 0;
 }
-.subscribe-form {
+.subscribe-field {
   position: relative;
   overflow: hidden;
+}
+.subscribe-label {
+  display: block;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 6px;
+}
+.subscribe-note {
+  display: none;
+  margin: 8px 0 0;
+  font-size: 13px;
+  text-align: left;
+  color: var(--black);
+}
+.subscribe-note.show {
+  display: block;
 }
 .subscribe-form input {
   width: 100%;
@@ -477,7 +561,7 @@ section {
 .subscribe-form button {
   position: absolute;
   right: 0;
-  background: #e8505b;
+  background: var(--primary);
   padding: 13px 20px;
   border: none;
   top: 0;
@@ -501,6 +585,6 @@ section {
   color: #fff;
 }
 .copyright-text i {
-  color: #e8505b;
+  color: var(--primary);
 }
 
