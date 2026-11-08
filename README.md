@@ -32,4 +32,4 @@ lalu buka `http://localhost:8000`.
 
 ## Deploy
 
-Setiap push ke `main` menjalankan GitHub Action yang menyinkronkan file ke hosting melalui FTP (butuh secrets `FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD`).
+Tidak ada CI/CD. Site di-upload manual ke hosting.
