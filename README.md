@@ -32,4 +32,5 @@ lalu buka `http://localhost:8000`.
 
 ## Deploy
 
-Tidak ada CI/CD. Site di-upload manual ke hosting.
+Deploy otomatis via GitHub Pages setiap push ke `main`:
+https://dannypratama.github.io/progress-vintage/
